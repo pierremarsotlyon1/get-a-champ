@@ -1,0 +1,1100 @@
+{
+  "sport": {
+    "aliases": {},
+    "mappings": {
+      "categorie_animation_conference": {
+        "properties": {
+          "nom_categorie_animation_conference": {
+            "type": "text"
+          },
+          "thematique_animation_conference": {
+            "type": "nested",
+            "properties": {
+              "id": {
+                "type": "keyword"
+              },
+              "nom_thematique_animation_conference": {
+                "type": "text"
+              }
+            }
+          }
+        }
+      },
+      "connaissance_metier": {
+        "properties": {
+          "categories_metier_connaissance": {
+            "type": "text"
+          },
+          "libelle_connaissance": {
+            "type": "text"
+          },
+          "metiers_lies_connaissance": {
+            "type": "nested",
+            "properties": {
+              "code_ogr": {
+                "type": "text"
+              },
+              "libelle": {
+                "type": "text"
+              }
+            }
+          }
+        }
+      },
+      "metier": {
+        "properties": {
+          "categories_metier": {
+            "type": "text"
+          },
+          "competences_metier": {
+            "type": "nested",
+            "properties": {
+              "code_ogr": {
+                "type": "text"
+              },
+              "libelle": {
+                "type": "text"
+              }
+            }
+          },
+          "connaissances_metier": {
+            "type": "nested",
+            "properties": {
+              "code_ogr": {
+                "type": "text"
+              },
+              "libelle": {
+                "type": "text"
+              }
+            }
+          },
+          "emplois_direct_metier": {
+            "type": "nested",
+            "properties": {
+              "code_ogr": {
+                "type": "text"
+              },
+              "libelle": {
+                "type": "text"
+              }
+            }
+          },
+          "emplois_proche_metier": {
+            "type": "nested",
+            "properties": {
+              "code_ogr": {
+                "type": "text"
+              },
+              "libelle": {
+                "type": "text"
+              }
+            }
+          },
+          "id_emplois_direct_metier": {
+            "type": "long"
+          },
+          "id_emplois_proche_metier": {
+            "type": "long"
+          },
+          "libelle_court_metier": {
+            "type": "text",
+            "analyzer": "autocomplete_min"
+          },
+          "libelle_metier": {
+            "type": "text",
+            "analyzer": "autocomplete_min"
+          }
+        }
+      },
+      "competition_sportif": {
+        "_parent": {
+          "type": "sportif"
+        },
+        "_routing": {
+          "required": true
+        },
+        "properties": {
+          "date_debut_competition_sportif": {
+            "type": "date",
+            "format": "yyyy-MM-dd"
+          },
+          "date_fin_competition_sportif": {
+            "type": "date",
+            "format": "yyyy-MM-dd"
+          },
+          "date_upload_video_competition_sportif": {
+            "type": "date",
+            "format": "yyyy-MM-dd HH:mm:ss"
+          },
+          "lieu_competition": {
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "location": {
+                "type": "geo_point"
+              },
+              "nom": {
+                "type": "text"
+              }
+            }
+          },
+          "niveau_competition_sportif": {
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "nom_niveau_competition_sportif": {
+                "type": "text"
+              }
+            }
+          },
+          "rang_competiton_sportif": {
+            "type": "integer"
+          },
+          "sport_competition_sportif": {
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "nom_sport": {
+                "type": "text"
+              }
+            }
+          },
+          "video_competition_sportif": {
+            "type": "keyword"
+          }
+        }
+      },
+      "salaire": {
+        "properties": {
+          "tranche_salaire": {
+            "type": "keyword"
+          }
+        }
+      },
+      "type_sponsoring": {
+        "properties": {
+          "description_type_sponsoring": {
+            "type": "text"
+          },
+          "nom_type_sponsoring": {
+            "type": "text"
+          }
+        }
+      },
+      "niveau_langue": {
+        "properties": {
+          "description_niveau_langue": {
+            "type": "keyword"
+          },
+          "nom_niveau_langue": {
+            "type": "text"
+          }
+        }
+      },
+      "experience_professionnelle_sportif": {
+        "_parent": {
+          "type": "sportif"
+        },
+        "_routing": {
+          "required": true
+        },
+        "properties": {
+          "date_debut_experience_professionnelle_sportif": {
+            "type": "date",
+            "format": "yyyy-MM-dd"
+          },
+          "date_fin_experience_professionnelle_sportif": {
+            "type": "date",
+            "format": "yyyy-MM-dd"
+          },
+          "description_poste_experience_professionnelle_sportif": {
+            "type": "text"
+          },
+          "lieu_experience_professionnelle_sportif": {
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "location": {
+                "type": "geo_point"
+              },
+              "nom": {
+                "type": "text"
+              }
+            }
+          },
+          "metier_experience_professionnelle_sportif": {
+            "type": "nested",
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "id_emplois_direct_metier": {
+                "type": "long"
+              },
+              "id_emplois_proche_metier": {
+                "type": "long"
+              },
+              "libelle_metier": {
+                "type": "text"
+              }
+            }
+          },
+          "mission_poste_experience_professionnelle_sportif": {
+            "type": "text"
+          },
+          "nom_entreprise_experience_professionnelle_sportif": {
+            "type": "text"
+          },
+          "realisation_poste_experience_professionnelle_sportif": {
+            "type": "text"
+          },
+          "titre_poste_experience_professionnelle_sportif": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "toujours_en_poste_experience_professionnelle_sportif": {
+            "type": "boolean"
+          }
+        }
+      },
+      "categorie_sportif": {
+        "properties": {
+          "nom_categorie_sportif": {
+            "type": "text"
+          }
+        }
+      },
+      "niveau_competition": {
+        "properties": {
+          "nom_categorie_sport": {
+            "type": "text"
+          },
+          "nom_niveau_competition": {
+            "type": "text"
+          }
+        }
+      },
+      "competence_metier": {
+        "properties": {
+          "categories_metier_competence": {
+            "type": "text"
+          },
+          "code_type_activite_competence": {
+            "type": "short"
+          },
+          "code_type_item_activite_competence": {
+            "type": "short"
+          },
+          "libelle_competence": {
+            "type": "text"
+          },
+          "metiers_lies_competence": {
+            "type": "nested",
+            "properties": {
+              "code_ogr": {
+                "type": "text"
+              },
+              "libelle": {
+                "type": "text"
+              }
+            }
+          }
+        }
+      },
+      "taille_entreprise": {
+        "properties": {
+          "nom_taille_entreprise": {
+            "type": "text"
+          }
+        }
+      },
+      "sportif": {
+        "properties": {
+          "activated": {
+            "type": "boolean"
+          },
+          "animations_conference": {
+            "type": "nested",
+            "properties": {
+              "id_thematique_animation_conference": {
+                "type": "text"
+              },
+              "montant_minimum": {
+                "type": "integer"
+              },
+              "nom_thematique_animation_conference": {
+                "type": "text"
+              }
+            }
+          },
+          "animations_formation": {
+            "type": "nested",
+            "properties": {
+              "animer_seul": {
+                "type": "boolean"
+              },
+              "id_thematique_animation_formation": {
+                "type": "text"
+              },
+              "nom_thematique_animation_formation": {
+                "type": "text"
+              }
+            }
+          },
+          "animations_incentive_evenementiel": {
+            "type": "nested",
+            "properties": {
+              "animer_seul": {
+                "type": "boolean"
+              },
+              "id_thematique_animation_incentive_evenementiel": {
+                "type": "text"
+              },
+              "nom_thematique_animation_incentive_evenementiel": {
+                "type": "text"
+              }
+            }
+          },
+          "categorie_sportif": {
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "nom": {
+                "type": "keyword"
+              }
+            }
+          },
+          "centres_interets_sportif": {
+            "type": "nested",
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "nom": {
+                "type": "keyword"
+              }
+            }
+          },
+          "contrats_mission_entreprise_sportif": {
+            "type": "nested",
+            "properties": {
+              "id_domaine_competence_sportif": {
+                "type": "text"
+              },
+              "id_domaine_connaissance": {
+                "type": "text"
+              },
+              "id_domaine_connaissance_sportif": {
+                "type": "text"
+              },
+              "niveau_connaissance": {
+                "properties": {
+                  "id_niveau_domaine_connaissance": {
+                    "type": "text"
+                  },
+                  "nom_niveau_domaine_connaissance": {
+                    "type": "keyword"
+                  }
+                }
+              },
+              "nom_domaine_connaissance": {
+                "type": "text"
+              }
+            }
+          },
+          "current_sport_sportif": {
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "nom_sport": {
+                "type": "text"
+              }
+            }
+          },
+          "date_naissance_sportif": {
+            "type": "date"
+          },
+          "domaines_competence": {
+            "type": "nested",
+            "properties": {
+              "id_domaine_competence": {
+                "type": "text"
+              },
+              "id_niveau_domaine_connaissance_competence": {
+                "type": "text"
+              },
+              "nom_domaine_competence": {
+                "type": "text"
+              },
+              "nom_niveau_domaine_connaissance_competence": {
+                "type": "text"
+              }
+            }
+          },
+          "domaines_connaissance": {
+            "type": "nested",
+            "properties": {
+              "id_domaine_connaissance": {
+                "type": "text"
+              },
+              "id_niveau_domaine_connaissance_competence": {
+                "type": "text"
+              },
+              "nom_domaine_connaissance": {
+                "type": "text"
+              },
+              "nom_niveau_domaine_connaissance_competence": {
+                "type": "text"
+              }
+            }
+          },
+          "email": {
+            "type": "keyword"
+          },
+          "id_emplois_direct_metier": {
+            "type": "long"
+          },
+          "id_emplois_proche_metier": {
+            "type": "long"
+          },
+          "lancement_produit_promotion_image_sportif": {
+            "properties": {
+              "accepte_lancement_produit_promotion_image_sportif": {
+                "type": "boolean"
+              }
+            }
+          },
+          "langues_sportif": {
+            "type": "nested",
+            "properties": {
+              "langue": {
+                "properties": {
+                  "_id": {
+                    "type": "text"
+                  },
+                  "nom_langue": {
+                    "type": "text"
+                  }
+                }
+              },
+              "niveau_langue": {
+                "properties": {
+                  "_id": {
+                    "type": "text"
+                  },
+                  "nom_niveau_langue": {
+                    "type": "text"
+                  }
+                }
+              }
+            }
+          },
+          "lieu_naissance_sportif": {
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "location": {
+                "type": "geo_point"
+              },
+              "nom": {
+                "type": "keyword"
+              }
+            }
+          },
+          "nom_sportif": {
+            "type": "text"
+          },
+          "numero_ss_sportif": {
+            "type": "keyword"
+          },
+          "password": {
+            "type": "keyword"
+          },
+          "prenom_sportif": {
+            "type": "text"
+          },
+          "recherche_situation_sportif": {
+            "type": "nested",
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "nom_recherche_situation_sportif": {
+                "type": "text"
+              }
+            }
+          },
+          "set_id_emplois_actif_metier": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "situation_entreprise_sportif": {
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "nom_situation_entreprise": {
+                "type": "text"
+              }
+            }
+          },
+          "situation_sportif": {
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "nom": {
+                "type": "keyword"
+              }
+            }
+          }
+        }
+      },
+      "langue": {
+        "properties": {
+          "nom_langue": {
+            "type": "text",
+            "analyzer": "autocomplete_min"
+          }
+        }
+      },
+      "sport": {
+        "properties": {
+          "categories_sport": {
+            "type": "nested",
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "nom_categorie_sport": {
+                "type": "keyword"
+              }
+            }
+          },
+          "collectif_sport": {
+            "type": "boolean"
+          },
+          "dimensions_sportives_sport": {
+            "type": "nested",
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "nom_dimension_sportive_sport": {
+                "type": "text"
+              }
+            }
+          },
+          "face_adversaire_sport": {
+            "type": "boolean"
+          },
+          "haut_niveau_sport": {
+            "type": "boolean"
+          },
+          "individuel_sport": {
+            "type": "boolean"
+          },
+          "niveau_exposition_media_sport": {
+            "type": "byte"
+          },
+          "nom_sport": {
+            "type": "text"
+          },
+          "olympique_sport": {
+            "type": "boolean"
+          }
+        }
+      },
+      "calendar_sportif": {
+        "_parent": {
+          "type": "sportif"
+        },
+        "_routing": {
+          "required": true
+        },
+        "properties": {
+          "date_debut": {
+            "type": "date",
+            "format": "yyyy-MM-dd HH:mm:ss"
+          },
+          "date_fin": {
+            "type": "date",
+            "format": "yyyy-MM-dd HH:mm:ss"
+          },
+          "description": {
+            "type": "text"
+          },
+          "titre": {
+            "type": "text"
+          }
+        }
+      },
+      "domaine_connaissance": {
+        "properties": {
+          "nom_domaine_connaissance": {
+            "type": "text",
+            "analyzer": "lowercase"
+          }
+        }
+      },
+      "centre_interet": {
+        "properties": {
+          "nom_centre_interet": {
+            "type": "keyword"
+          }
+        }
+      },
+      "situation_sportif": {
+        "properties": {
+          "nom_situation_sportif": {
+            "type": "keyword"
+          }
+        }
+      },
+      "entreprise": {
+        "properties": {
+          "activated": {
+            "type": "boolean"
+          },
+          "activite_entreprise": {
+            "type": "text"
+          },
+          "description_entreprise": {
+            "type": "text"
+          },
+          "email": {
+            "type": "keyword"
+          },
+          "lieu_entreprise": {
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "location": {
+                "type": "geo_point"
+              },
+              "nom": {
+                "type": "keyword"
+              }
+            }
+          },
+          "nom_entreprise": {
+            "type": "text"
+          },
+          "nom_gerant": {
+            "type": "text"
+          },
+          "offres_emploi": {
+            "type": "nested",
+            "properties": {
+              "_id": {
+                "type": "keyword"
+              },
+              "chasser_tete": {
+                "type": "boolean"
+              },
+              "description_offre": {
+                "type": "text"
+              },
+              "diffuser": {
+                "type": "boolean"
+              },
+              "dimensions_sportives_attendues": {
+                "type": "nested",
+                "properties": {
+                  "_id": {
+                    "type": "keyword"
+                  },
+                  "nom_dimension_sportive": {
+                    "type": "text"
+                  }
+                }
+              },
+              "lieu_poste": {
+                "properties": {
+                  "_id": {
+                    "type": "keyword"
+                  },
+                  "location": {
+                    "type": "geo_point"
+                  },
+                  "nom": {
+                    "type": "keyword"
+                  }
+                }
+              },
+              "matcher_sportif": {
+                "type": "boolean"
+              },
+              "metier": {
+                "properties": {
+                  "_id": {
+                    "type": "keyword"
+                  },
+                  "libelle_metier": {
+                    "type": "text"
+                  }
+                }
+              },
+              "mission": {
+                "type": "text"
+              },
+              "niveau_etude": {
+                "properties": {
+                  "_id": {
+                    "type": "keyword"
+                  },
+                  "nom_niveau_formation": {
+                    "type": "keyword"
+                  }
+                }
+              },
+              "prerequis": {
+                "type": "text"
+              },
+              "recherche_confidentielle": {
+                "type": "boolean"
+              },
+              "salaire": {
+                "properties": {
+                  "_id": {
+                    "type": "keyword"
+                  },
+                  "tranche_salaire": {
+                    "type": "keyword"
+                  }
+                }
+              },
+              "salaire_maximum": {
+                "type": "integer"
+              },
+              "salaire_minimum": {
+                "type": "integer"
+              }
+            }
+          },
+          "password": {
+            "type": "keyword"
+          },
+          "prenom_gerant": {
+            "type": "text"
+          },
+          "siret_entreprise": {
+            "type": "text"
+          },
+          "taille_entreprise": {
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "nom_taille_entreprise": {
+                "type": "text"
+              }
+            }
+          },
+          "telephone_entreprise": {
+            "type": "keyword"
+          },
+          "url_page_facebook_entreprise": {
+            "type": "keyword"
+          },
+          "url_page_instagram_entreprise": {
+            "type": "keyword"
+          },
+          "url_page_twitter_entreprise": {
+            "type": "keyword"
+          },
+          "url_site_web_entreprise": {
+            "type": "keyword"
+          }
+        }
+      },
+      "ecoles": {
+        "properties": {
+          "adresse_ecole": {
+            "type": "text"
+          },
+          "appellation_officielle_ecole": {
+            "type": "text",
+            "analyzer": "autocomplete_min"
+          },
+          "code_nature_ecole": {
+            "type": "short"
+          },
+          "code_nature_libelle_ecole": {
+            "type": "text"
+          },
+          "code_postal_ecole": {
+            "type": "text"
+          },
+          "denomination_principale_ecole": {
+            "type": "text"
+          },
+          "location_ecole": {
+            "type": "geo_point"
+          },
+          "numero_immatriculation_ecole": {
+            "type": "text"
+          },
+          "secteur_ecole": {
+            "type": "text"
+          },
+          "ville_ecole": {
+            "type": "text"
+          }
+        }
+      },
+      "sponsoring_sportif": {
+        "_parent": {
+          "type": "sportif"
+        },
+        "_routing": {
+          "required": true
+        },
+        "properties": {
+          "date_depart_sponsoring_sportif": {
+            "type": "date",
+            "format": "yyyy-MM-dd"
+          },
+          "date_fin_sponsoring_sportif": {
+            "type": "date",
+            "format": "yyyy-MM-dd"
+          },
+          "description_sponsoring_sportif": {
+            "type": "text"
+          },
+          "lieu_sponsoring_sportif": {
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "location": {
+                "type": "geo_point"
+              },
+              "nom": {
+                "type": "text"
+              }
+            }
+          },
+          "montant_recherche": {
+            "type": "integer"
+          },
+          "nom_sportif_sponsoring_sportif": {
+            "type": "text"
+          },
+          "prenom_sportif_sponsoring_sportif": {
+            "type": "text"
+          },
+          "type_sponsoring_sportif": {
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "nom_type_sponsoring": {
+                "type": "text"
+              }
+            }
+          }
+        }
+      },
+      "situation_entreprise": {
+        "properties": {
+          "nom_situation_entreprise": {
+            "type": "text"
+          }
+        }
+      },
+      "dimension_sportive": {
+        "properties": {
+          "description_dimension_sportive": {
+            "type": "text"
+          },
+          "nom_dimension_sportive": {
+            "type": "text"
+          }
+        }
+      },
+      "categorie_sport": {
+        "properties": {
+          "nom_categorie_sport": {
+            "type": "text"
+          }
+        }
+      },
+      "experience_sportif": {
+        "_parent": {
+          "type": "sportif"
+        },
+        "_routing": {
+          "required": true
+        },
+        "properties": {
+          "date_debut_experience_sportif": {
+            "type": "date",
+            "format": "yyyy-MM-dd"
+          },
+          "date_fin_experience_sportif": {
+            "type": "date",
+            "format": "yyyy-MM-dd"
+          },
+          "description_experience_sportif": {
+            "type": "text"
+          },
+          "lieu_experience_sportif": {
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "location": {
+                "type": "geo_point"
+              },
+              "nom": {
+                "type": "text"
+              }
+            }
+          },
+          "nom_club_experience_sportif": {
+            "type": "text"
+          },
+          "sport_experience_sportif": {
+            "properties": {
+              "_id": {
+                "type": "text"
+              },
+              "nom_sport": {
+                "type": "text"
+              }
+            }
+          }
+        }
+      },
+      "categorie_animation_incentive": {
+        "properties": {
+          "nom_categorie_animation_incentive": {
+            "type": "text"
+          },
+          "thematique_animation_incentive": {
+            "type": "nested",
+            "properties": {
+              "id": {
+                "type": "keyword"
+              },
+              "nom_thematique_animation_incentive": {
+                "type": "text"
+              }
+            }
+          }
+        }
+      },
+      "type_contrat_travail": {
+        "properties": {
+          "nom_type_contrat_travail": {
+            "type": "keyword"
+          }
+        }
+      },
+      "niveau_formation": {
+        "properties": {
+          "nom_niveau_formation": {
+            "type": "text"
+          }
+        }
+      },
+      "recherche_situation_sportif": {
+        "properties": {
+          "nom_recherche_situation_sportif": {
+            "type": "text"
+          }
+        }
+      },
+      "categorie_animation_formation": {
+        "properties": {
+          "nom_categorie_animation_formation": {
+            "type": "text"
+          },
+          "thematique_animation_formation": {
+            "type": "nested",
+            "properties": {
+              "id": {
+                "type": "keyword"
+              },
+              "nom_thematique_animation_formation": {
+                "type": "text"
+              }
+            }
+          }
+        }
+      },
+      "domaine_competence": {
+        "properties": {
+          "nom_domaine_competence": {
+            "type": "text",
+            "analyzer": "lowercase"
+          }
+        }
+      },
+      "niveau_domaine_connaissance_competence": {
+        "properties": {
+          "nom_niveau_domaine_connaissance_competence": {
+            "type": "keyword"
+          }
+        }
+      }
+    },
+    "settings": {
+      "index": {
+        "number_of_shards": "5",
+        "provided_name": "sport",
+        "creation_date": "1490818288865",
+        "analysis": {
+          "filter": {
+            "autocomplete_filter_min": {
+              "type": "ngram",
+              "min_gram": "2",
+              "max_gram": "15"
+            }
+          },
+          "analyzer": {
+            "lowercase": {
+              "filter": [
+                "lowercase"
+              ],
+              "type": "custom",
+              "tokenizer": "standard"
+            },
+            "autocomplete_min": {
+              "filter": [
+                "lowercase",
+                "autocomplete_filter_min"
+              ],
+              "type": "custom",
+              "tokenizer": "standard"
+            }
+          }
+        },
+        "number_of_replicas": "1",
+        "uuid": "X47kBVDuS7m5A5psBxDeNA",
+        "version": {
+          "created": "5030099"
+        }
+      }
+    }
+  }
+}

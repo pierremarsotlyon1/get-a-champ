@@ -1,0 +1,2 @@
+webpackJsonp([65],{1063:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var o={path:"/profil/sportif/sponsoring/add",getComponents:function(e,n){t.e(10,function(e){n(null,t(459).default)})}};n.default=o}});
+//# sourceMappingURL=65.4e9664b6.chunk.js.map

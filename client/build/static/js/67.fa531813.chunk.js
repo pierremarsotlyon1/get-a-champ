@@ -1,0 +1,2 @@
+webpackJsonp([67],{1055:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o={path:"/profil/sportif/langues/add",getComponents:function(e,t){n.e(16,function(e){t(null,n(920).default)})}};t.default=o}});
+//# sourceMappingURL=67.fa531813.chunk.js.map

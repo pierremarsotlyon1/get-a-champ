@@ -1,0 +1,96 @@
+<section className="text-center">
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+              <h2>Nos tarifs</h2>
+              <p className="lead">
+                Nous vous offrons les deux premiers mois à la création de votre compte. Aucun engagement. Payez que ce que vous voulez, quand vous le voulez.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="pricing-section-2 text-center ">
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-6 col-md-3">
+              <div className="pricing pricing-3">
+                <div className="pricing__head bg--secondary boxed">
+                  <h5>Sportif</h5>
+                  <span className="h1">
+                                        <span className="pricing__dollar">€</span>4,99</span>
+                  <p className="type--fine-print">Par mois.</p>
+                </div>
+                <ul>
+                  <li>
+                    <span>Accès illimité à toutes nos fonctionnalités</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-3">
+              <div className="pricing pricing-3">
+                <div className="pricing__head bg--secondary boxed">
+                  <h5>Entreprise - Bronze</h5>
+                  <span className="h1">
+                                        <span className="pricing__dollar">€</span>59,99</span>
+                  <p className="type--fine-print">Par mois.</p>
+                </div>
+                <ul>
+                  <li>
+                    <span>Gestion de votre profile</span>
+                  </li>
+                  <li>
+                    <span>Rechercher des sponsorings</span>
+                  </li>
+                  <li>
+                    <span>Ajouter des offres d'emplois (5 par mois, options de base)</span>
+                  </li>
+                  <li>
+                    <span>Accès à une formation par mois</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-3">
+              <div className="pricing pricing-3">
+                <div className="pricing__head bg--primary boxed">
+                  <h5>Entreprise - Argent</h5>
+                  <span className="h1">
+                                        <span className="pricing__dollar">€</span>89,99</span>
+                  <p className="type--fine-print">Par mois.</p>
+                </div>
+                <ul>
+                  <li>
+                    <span>Toutes les fonctionnalités de l'Entreprise - Bronze</span>
+                  </li>
+                  <li>
+                    <span>Fonctionnalité des offres d'emplois complète et en illimité</span>
+                  </li>
+                  <li>
+                    <span>Accès à toutes nos formations en illimité</span>
+                  </li>
+                  <li>
+                    <span>Accès à l'auto-diagnostic pour notre labélisation</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-3">
+              <div className="pricing pricing-3">
+                <div className="pricing__head bg--secondary boxed">
+                  <h5>Entreprise - Or</h5>
+                  <span className="h1">
+                                        <span className="pricing__dollar">€</span>129,99</span>
+                  <p className="type--fine-print">Par mois.</p>
+                </div>
+                <ul>
+                  <li>
+                    <span>Accés illimité à toutes nos fonctionnalités</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

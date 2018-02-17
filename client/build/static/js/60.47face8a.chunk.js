@@ -1,0 +1,2 @@
+webpackJsonp([60],{1051:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o={path:"/profil/sportif/ipip/full",getComponents:function(e,t){n.e(34,function(e){t(null,n(918).default)})}};t.default=o},1052:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o={path:"/profil/sportif/ipip/short",getComponents:function(e,t){n.e(33,function(e){t(null,n(919).default)})}};t.default=o}});
+//# sourceMappingURL=60.47face8a.chunk.js.map

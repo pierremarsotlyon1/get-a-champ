@@ -1,0 +1,47 @@
+.geosuggest{
+    font-size:14px;
+}
+
+.toast-notification{
+    z-index: 99999999999999;
+}
+
+.nav-container.nav-container--sidebar + .main-container {
+    padding: 15px 15px 15px 15px;
+}
+
+.main-container {
+    min-height: 100%;
+}
+
+html{
+    background: #fafafa;
+}
+
+.margin-top-30{
+    margin-top: 30px;
+}
+
+.margin-top-15{
+    margin-top: 15px;
+}
+
+.margin-bottom-30{
+    margin-bottom: 30px;
+}
+
+.margin-bottom-15{
+    margin-bottom: 15px;
+}
+
+.tabs-menu-item.is-active a{
+    color: #337ab7
+}
+
+.force--white--color{
+    color: #fff !important;
+}
+
+.title-job{
+    height: 52px !important;
+}
